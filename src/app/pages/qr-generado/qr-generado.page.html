@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>qr_generado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <p>Asignatura : {{getCodigoClase()}}</p>
+    <P>Clase N°{{getNumeroClase()}}</P>
+    <p>Sala : {{getSala()}}</p>
+    <img
+      src="https://api.qrserver.com/v1/create-qr-code/?size=225x225&data=www.classbook.cl/Clase={{getNumeroClase()}}/Asignatura={{getCodigoClase()}}/Sala={{getSala()}}"
+      alt="qr-code">
+    <p>Codigo manual = {{getCodigoClase()}}{{getNumeroClase()}}{{getSala()}}</p>
+  </ion-card>
+
+  <div class="center">
+    <ion-button routerLink="/profesor">
+      Volver
+    </ion-button>
+  </div>
+
+</ion-content>
